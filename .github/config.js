@@ -41,7 +41,6 @@ module.exports = {
       ":semanticPrefixFixDepsChoreOthers",
       ":ignoreModulesAndTests",
       ":autodetectRangeStrategy",
-      "group:recommended",
       ":prHourlyLimitNone",
       ":prConcurrentLimitNone",
       ":label(renovate)",
