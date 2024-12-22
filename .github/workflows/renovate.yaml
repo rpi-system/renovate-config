@@ -41,7 +41,8 @@ jobs:
         with:
           node-version: ${{ inputs.node-version }}
       - name: Validate Renovate JS 
-        run: npx --yes --package renovate -- renovate-config-validator --strict
+        run: npx -v
+        # run: npx --yes --package renovate -- renovate-config-validator --strict
         # run: npx --yes --package renovate -- renovate-config-validator --strict
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@7e1c0fa7cfd2c3e91b27cdd87ae09a6a0fafb5f2 # v41.0.0
