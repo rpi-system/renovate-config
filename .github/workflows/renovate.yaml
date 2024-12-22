@@ -1,0 +1,65 @@
+name: Renovate
+
+on:
+  workflow_dispatch:
+    inputs:
+      node-version: 
+        description: "Node version to use"
+        required: false
+        default: "16"
+        type: string
+      logLevel:
+        description: "Override default log level"
+        required: false
+        default: "debug"
+        type: string
+      overrideSchedule:
+        description: "Override all schedules"
+        required: false
+        default: "false"
+        type: string
+      configurationFile: 
+        description: "Override default configuration file"
+        required: false
+        default: ".github/config.js"
+        type: string
+      renovate-version: 
+        description: "Override default renovate version"
+        required: false
+        default: "full"
+        type: string
+
+concurrency: renovate
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@44c2b7a8a4ea60a981eaca3cf939b5f4305c123b # v4.1.5
+      - name: Install Node
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4
+        with:
+          node-version: ${{ inputs.node-version }}
+      - name: Validate Renovate JS 
+        run: npx -v
+        # run: npx --yes --package renovate -- renovate-config-validator --strict
+      - name: Self-hosted Renovate
+        uses: renovatebot/github-action@7e1c0fa7cfd2c3e91b27cdd87ae09a6a0fafb5f2 # v41.0.0
+        env:
+          RENOVATE_ASSIGNES: "marcoschmidl"
+          # Github read-only PAT for Releases
+          GITHUB_COM_TOKEN: ${{ secrets.PAT_GITHUB_RELEASES_RENOVATE}}
+          # Repository taken from variable to keep configuration file generic
+          RENOVATE_REPOSITORIES: ${{ github.repository }}
+          # Onboarding not needed for self hosted
+          RENOVATE_ONBOARDING: "false" 
+          # Username for GitHub authentication (should match GitHub App name + [bot])
+          RENOVATE_USERNAME: "marcoschmidl"
+          # Git commit author used, must match GitHub App
+          RENOVATE_GIT_AUTHOR: "marcoschmidl <marco.schmidl@whiteduck.com>"
+          # Use GitHub API to create commits (this allows for signed commits from GitHub App)
+          RENOVATE_PLATFORM_COMMIT: "false"
+          RENOVATE_CONFIG_FILE: ${{ inputs.configurationFile }}
+          LOG_LEVEL: ${{ inputs.logLevel }}
+        with:
+          token: ${{ secrets.RENOVATE_TOKEN }}
