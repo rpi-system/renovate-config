@@ -21,7 +21,7 @@ on:
       configurationFile: 
         description: "Override default configuration file"
         required: false
-        default: ".github/default.json"
+        default: "default.json"
         type: string
       renovate-version: 
         description: "Override default renovate version"
