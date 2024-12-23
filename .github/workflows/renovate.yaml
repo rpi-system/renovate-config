@@ -38,7 +38,7 @@ on:
       configurationFile: 
         description: "Override default configuration file"
         required: false
-        default: ".github/renovate.json"
+        default: ".github/renovate.js"
         type: string
       renovate-version: 
         description: "Override default renovate version"
