@@ -83,12 +83,12 @@ jobs:
       #   run: npx -v
         # run: npx --yes --package renovate -- renovate-config-validator --strict
         # run: npx --yes --package renovate -- renovate-config-validator --strict
-      # - name: Get token
-      #   id: get_token
-      #   uses: actions/create-github-app-token@5d869da34e18e7287c1daad50e0b8ea0f506ce69 # v1.11.0
-      #   with:
-      #     app-id: ${{ secrets.RENOVATE_APP_ID }}
-      #     private-key: ${{ secrets.RENOVATE_PRIVATE_KEY }}
+      - name: Get token
+        id: get_token
+        uses: actions/create-github-app-token@5d869da34e18e7287c1daad50e0b8ea0f506ce69 # v1.11.0
+        with:
+          app-id: ${{ secrets.RENOVATE_APP_ID }}
+          private-key: ${{ secrets.RENOVATE_PRIVATE_KEY }}
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@e1db501385ddcccbaae6fb9c06befae04f379f23 # v40.2.10
         with:
