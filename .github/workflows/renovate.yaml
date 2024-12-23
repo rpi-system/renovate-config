@@ -16,7 +16,7 @@ on:
       configurationFile: 
         description: "Override default configuration file"
         required: false
-        default: ".github/renovate.js"
+        default: ".github/renovate.json"
         type: string
       renovate-version: 
         description: "Override default renovate version"
@@ -28,7 +28,7 @@ on:
       logLevel:
         description: "Override default log level"
         required: false
-        default: "info"
+        default: "debug"
         type: string
       overrideSchedule:
         description: "Override all schedules"
