@@ -25,7 +25,7 @@ module.exports = {
     "terraform",
     "dockerfile",
     "nuget",
-    "azure-bicep-resource",
+    "bicep",
     "custom.regex"
   ],
   // Presets Configs 
@@ -145,7 +145,7 @@ module.exports = {
       // Bicep
       description: "tbd",
       matchManagers: [
-        "azure-bicep-resource"
+        "bicep"
       ],
       matchUpdateTypes: [
         "minor",
