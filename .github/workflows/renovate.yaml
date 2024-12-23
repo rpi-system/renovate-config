@@ -93,5 +93,5 @@ jobs:
         uses: renovatebot/github-action@e1db501385ddcccbaae6fb9c06befae04f379f23 # v40.2.10
         with:
           renovate-version: ${{ env.RENOVATE_VERSION }}
-          configurationFile: ${{ env.RENOVATE_CONFIG_FILE }}
+          # configurationFile: ${{ env.RENOVATE_CONFIG_FILE }} # default checks for js -> https://docs.renovatebot.com/config-overview/#file-config
           token: "${{ secrets.RENOVATE_TOKEN }}"
