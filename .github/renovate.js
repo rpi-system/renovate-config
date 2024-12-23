@@ -48,6 +48,11 @@ module.exports = {
     "default:automergeDigest",
     ":ignoreUnstable"
   ],
+
+  repositories: [
+    "rpi-system/renovate-config",
+    "rpi-system/rpi-workflow-templates"
+  ],
   // Datasources
   // Can be found here: https://docs.renovatebot.com/modules/datasource/#datasources
   packageRules: [

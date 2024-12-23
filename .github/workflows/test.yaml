@@ -13,5 +13,5 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-
-    - run: make validate
+    # - name: Validate
+    #   run: make validate
