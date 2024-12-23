@@ -1,0 +1,5 @@
+{
+    "extends": ["github>rpi-system/renovate-config#main"],
+    "baseBranches": ["main"],
+    "prHourlyLimit": 2
+  }
