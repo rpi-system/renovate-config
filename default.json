@@ -1,9 +1,13 @@
 {
-  "baseBranches": ["main"],
-  "rebaseWhen": "conflicted",
-  "labels": ["dependencies"],
   "automergeStrategy": "merge-commit",
   "ignoreTests": true,
+  "automergeType": "pr",
+  "platformAutomerge": true,
+  "rebaseWhen": "conflicted",
+  "onboarding": false,
+  "onboardingConfigFileName": "renovate.json5",
+  "dependencyDashboardTitle": "Renovate Dependency Dashboard",
+  "dependencyDashboardHeader": "This issue lists Renovate updates and detected dependencies. Read the [Dependency Dashboard](https://docs.renovatebot.com/key-concepts/dashboard/) docs to learn more.<br>Renovate logs for debug [here](https://developer.mend.io/{{platform}}/{{repository}}).",
   "packageRules": [
    {
       "matchManagers": ["dockerfile"],
@@ -29,4 +33,16 @@
     "rpi-system/renovate-config",
     "rpi-system/rpi-workflow-templates"
   ],
+  "labels": [
+    "dependencies",
+    "renovate"
+  ],
+  "baseBranches": [
+    "main",
+    "master"
+  ],
+  "enabledManagers": [
+    "github-actions",
+    "dockerfile",
+  ]
 }
