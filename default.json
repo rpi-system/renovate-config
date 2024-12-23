@@ -24,5 +24,9 @@
       "pinDigests": true,
       "schedule": ["every weekend after 4am"]
     }
-  ]
+  ],
+  "repositories": [
+    "rpi-system/renovate-config",
+    "rpi-system/rpi-workflow-templates"
+  ],
 }
