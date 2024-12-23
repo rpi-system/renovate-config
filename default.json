@@ -14,7 +14,7 @@
       "terraform",
       "dockerfile",
       "nuget",
-      "azure-bicep-resource",
+      "bicep",
       "custom.regex"
     ],
     "extends": [
